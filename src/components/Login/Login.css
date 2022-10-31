@@ -1,0 +1,23 @@
+.loginContainer {
+  height: 100vh;
+  background-color: #000;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+}
+
+.loginContainer > img {
+  width: 100%;
+}
+
+.loginContainer > a {
+  text-transform: uppercase;
+  padding: 20px 40px;
+  border-radius: 99px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  background-color: #1db954;
+  width: auto;
+}
