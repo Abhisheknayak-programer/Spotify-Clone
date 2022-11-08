@@ -5,6 +5,8 @@ export const initialState = {
   item: null,
   token: null,
   discover_weekly: null,
+  top_artists: null,
+  spotify: null,
 };
 
 const reducer = (state, action) => {
@@ -33,6 +35,34 @@ const reducer = (state, action) => {
     return {
       ...state,
       discover_weekly: action.discover_weekly,
+    };
+  }
+
+  if (action.type === "SET_PLAYING") {
+    return {
+      ...state,
+      playing: action.playing,
+    };
+  }
+
+  if (action.type === "SET_ITEM") {
+    return {
+      ...state,
+      item: action.item,
+    };
+  }
+
+  if (action.type === "SET_TOP_ARTISTS") {
+    return {
+      ...state,
+      top_artists: action.top_artists,
+    };
+  }
+
+  if (action.type === "SET_SPOTIFY") {
+    return {
+      ...state,
+      spotify: action.spotify,
     };
   }
 

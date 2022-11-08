@@ -12,7 +12,7 @@ const Player = (props) => {
         <Body spotify={props.spotify} />
       </div>
 
-      <Footer />
+      <Footer spotify={props.spotify} />
     </div>
   );
 };

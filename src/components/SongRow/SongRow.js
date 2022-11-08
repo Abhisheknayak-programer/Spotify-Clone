@@ -3,7 +3,7 @@ import "./SongRow.css";
 
 const SongRow = (props) => {
   return (
-    <div className="songRow">
+    <div className="songRow" onClick={() => props.playSong(props.track.id)}>
       <img
         src={props.track.album.images[0].url}
         alt={props.track.name}

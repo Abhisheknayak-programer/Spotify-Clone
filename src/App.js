@@ -39,7 +39,18 @@ const App = () => {
           discover_weekly: response,
         });
       });
-      
+
+      spotify.getMyTopArtists().then((response) =>
+        spotifyDispatchFunc({
+          type: "SET_TOP_ARTISTS",
+          top_artists: response,
+        })
+      );
+
+      spotifyDispatchFunc({
+        type: "SET_SPOTIFY",
+        spotify: spotify,
+      });
     }
   }, []);
 
