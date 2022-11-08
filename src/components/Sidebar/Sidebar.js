@@ -5,10 +5,10 @@ import SidebarOptions from "../SidebarOptions/SidebarOptions";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
-// import { useStateValue } from "../../context/StateProvider";
+import { useStateValue } from "../../context/StateProvider";
 
 const SideBar = () => {
-  // const [spotifyStateValue, dispatch] = useStateValue();
+  const [spotifyStateValue, dispatch] = useStateValue();
 
   return (
     <div className="sidebar">
@@ -22,13 +22,9 @@ const SideBar = () => {
       <strong className="sidebar__title">PLAYLISTS</strong>
       <hr />
 
-      {/* {spotifyStateValue?.playlists?.items.map((playlist) => (
-        <SidebarOptions title={playlist.name} />
-      ))} */}
-
-      <SidebarOptions title="Hip Hop" />
-      <SidebarOptions title="Rock" />
-      <SidebarOptions title="Coding Time" />
+      {spotifyStateValue?.playlists?.items?.map((playlist) => (
+        <SidebarOptions key={playlist.id} title={playlist.name} />
+      ))}
     </div>
   );
 };

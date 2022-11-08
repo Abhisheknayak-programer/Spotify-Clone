@@ -32,6 +32,14 @@ const App = () => {
       spotify.getUserPlaylists().then((playlists) => {
         spotifyDispatchFunc({ type: "SET_PLAYLISTS", playlists: playlists });
       });
+
+      spotify.getPlaylist("5nGgTcWSraMFxgl6bbnYRr").then((response) => {
+        spotifyDispatchFunc({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        });
+      });
+      
     }
   }, []);
 
